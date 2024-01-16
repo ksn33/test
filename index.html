@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комбинированная страница</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://forms.gle/js/forms2/js/inlined_prod.js"></script>
+</head>
+<body>
+
+    <section id="formSection">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZuNmeHslCID-kP6e8N__cXEiMd0aUL3taULjxveyfQNM9rw/viewform?usp=sf_link" width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+    </section>
+
+    <section id="tableSection">
+        <div id="chart_div"></div>
+    </section>
+
+    <script>
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(drawTable);
+
+        function drawTable() {
+            var data = new google.visualization.DataTable();
+            // Добавьте данные в таблицу
+
+            var table = new google.visualization.Table(document.getElementById('chart_div'));
+            table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
+        }
+    </script>
+
+</body>
+</html>
